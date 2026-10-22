@@ -36,7 +36,24 @@ const LIVE_ITEMS = ['https://github.com/adityana0/Videy-Stream-Live/raw/refs/hea
 ];
 let current=0; const video=document.getElementById('liveVideo');
 document.getElementById('adLink').href=AD_DIRECT_LINK;
-function loadItem(index){current=(index+LIVE_ITEMS.length)%LIVE_ITEMS.length;const item=LIVE_ITEMS[current];document.getElementById('hostName').textContent=item.host;document.getElementById('hostAvatar').src=item.avatar;document.getElementById('viewers').textContent=item.viewers;document.getElementById('likes').textContent=item.likes;
+function loadItem(index){current=(index+LIVE_ITEMS.length)%LIVE_ITEMS.length;
+const LIVE_ITEMS = [
+  {
+    host: 'Live Room 01',
+    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80',
+    videoUrl: 'https://raw.githubusercontent.com/adityana0/Videy-Stream-Live/refs/heads/main/uhhh%20(1).mp4',
+    viewers: '1.289',
+    likes: '24'
+  },
+  {
+    host: 'Live Room 02',
+    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80',
+    videoUrl: 'https://raw.githubusercontent.com/adityana0/Videy-Stream-Live/refs/heads/main/Ini%20yang%20kalian%20cari.mp4',
+    viewers: '982',
+    likes: '31'
+  }
+];
+;document.getElementById('hostName').textContent=item.host;document.getElementById('hostAvatar').src=item.avatar;document.getElementById('viewers').textContent=item.viewers;document.getElementById('likes').textContent=item.likes;
  if(item.videoUrl){video.src=item.videoUrl;video.load();video.play().catch(()=>{});document.getElementById('liveApp').classList.remove('paused');}
  else {video.removeAttribute('src');video.load();document.getElementById('liveApp').classList.add('paused');}
 }
